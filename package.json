@@ -1,0 +1,12 @@
+{
+  "name": "triviastack",
+  "version": "1.0.0",
+  "description": "quiz informatici",
+  "main": "",
+  "scripts": { 
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

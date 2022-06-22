@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+
+    // Fonts
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap' rel='stylesheet')
+
+    // scrollreveal
+    script(src='https://unpkg.com/scrollreveal')
+
+    // favicon
+    link(rel='shortcut icon' href='/images/logo.png')
+
+  body
+    h1= quiz.question
+    h2= quiz.answers.answer_a
+    h2= quiz.answers.answer_b
+    h2= quiz.answers.answer_c
+    h2= quiz.answers.answer_d
+    h3= quiz.correct_answer
+
+    

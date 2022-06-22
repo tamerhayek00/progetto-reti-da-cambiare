@@ -1,0 +1,29 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/classifica.css")
+    
+
+block content
+    // CLASSIFICA
+    .descrizione.reveal
+        h2 I MIGLIORI GIOCATORI
+    br
+    .container
+        table.table
+            thead
+                tr.reveal
+                    th #
+                    th Nome
+                    th Username
+                    th Punteggio
+            tbody
+                each elem,index in giocatori
+                     tr.reveal
+                        td= index+1
+                        td= elem.nome
+                        td= elem.username
+                        td= elem.punteggio
+                
+
+    

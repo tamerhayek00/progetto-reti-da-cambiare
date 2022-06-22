@@ -1,0 +1,87 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/registrazione.css")
+    script(src='/scripts/validaDati/registrazione.js')
+
+block content
+    // REGISTRAZIONE
+    .container
+        .descrizione
+            h3.reveal Crea il tuo account e intraprendi una sfida!
+            a.reveal(href='/accedi/')  Sei gi&agrave; registrato?
+        .terminale.zoom
+            .window-bar
+                .window-bar-title
+                    img(src='/images/icons/code.svg' alt='Logo Terminale')
+                    p
+                        | Registrazione 
+                        span.pressEnter
+                            | - Premi 
+                            i Invio
+                            |  per confermare
+                .window-bar-buttons
+                    img(src='/images/icons/minimize.svg' alt='Minimize')
+                    img(src='/images/icons/maximize.svg' alt='Maximize')
+                    a(href='../../')
+                        img(src='/images/icons/close.svg' alt='Close')
+            form.form(method='POST' action='./registrati.php' onsubmit='return validaForm();')
+                .utenteEsistente
+                    p
+                        | Utente gi&agrave; esistente! 
+                        a(href='/accedi') Accedi
+                #divNome.form-elem
+                    label(for='nome')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /nome
+                        | $&gt;
+                    input#nome(type='text' name='nomeUtente' placeholder='Il tuo nome' onkeypress='nomePressed(event)' autofocus='')
+                    button#nomeButton.btn(type='button' onclick='nomePressedBtn()') Invio
+                small#smallNome
+                #divCognome.form-elem
+                    label(for='cognome')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /cognome
+                        | $&gt;
+                    input#cognome(type='text' name='cognomeUtente' placeholder='Il tuo cognome' onkeypress='cognomePressed(event)')
+                    button#cognomeButton.btn(type='button' onclick='cognomePressedBtn()' disabled='') Invio
+                small#smallCognome
+                #divEmail.form-elem
+                    label(for='email')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /email
+                        | $&gt;
+                    input#email(type='email' name='emailUtente' placeholder='example@mail.com' onkeypress='emailPressed(event)')
+                    button#emailButton.btn(type='button' onclick='emailPressedBtn()' disabled='') Invio
+                small#smallEmail
+                #divUsername.form-elem
+                    label(for='username')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /username
+                        | $&gt;
+                    input#username(type='text' name='username' placeholder='Almeno 8 caratteri' onkeypress='usernamePressed(event)')
+                    button#usernameButton.btn(type='button' onclick='usernamePressedBtn()' disabled='') Invio
+                small#smallUsername
+                #divPassword.form-elem
+                    label(for='password')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /password
+                        | $&gt;
+                    input#password(type='password' name='passwordUtente' placeholder='Almeno 8 caratteri' onkeypress='passwordPressed(event)')
+                    button#passwordButton.btn(type='button' onclick='passwordPressedBtn()' disabled='') Invio
+                small#smallPassword
+                #divPasswordConf.form-elem
+                    label(for='passwordconferma')
+                        span.dominio trivia@registrazione
+                        | :
+                        span.root /conferma-password
+                        | $&gt;
+                    input#passwordconferma(type='password' name='passwordConfermaUtente' placeholder='Conferma password' onkeypress='passwordConfPressed(event)')
+                small#smallPasswordConf
+                #divSubmit.divSubmit
+                    button#submit.submit(name='registrazione' type='submit' disabled='') Registrami

@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= title
-
+     
     // Fonts
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
@@ -14,12 +14,56 @@ html
     // favicon
     link(rel='shortcut icon' href='/images/logo.png')
 
-  body
-    h1= quiz.question
-    h2= quiz.answers.answer_a
-    h2= quiz.answers.answer_b
-    h2= quiz.answers.answer_c
-    h2= quiz.answers.answer_d
-    h3= quiz.correct_answer
+    //css
+    link(rel="stylesheet", href="/stylesheets/quiz.css")
+   
 
-    
+  body
+    //h1= quiz.question
+    //h2= quiz.answers.answer_a
+    //h2= quiz.answers.answer_b
+    //h2= quiz.answers.answer_c
+    //h2= quiz.answers.answer_d
+    //h3= quiz.correct_answer
+    img#bg(src='/images/quiz.jpg')
+    .container
+      .header
+        #exit.exit &#x2716;
+        .giocatori
+          span.left &apos; . $username . &apos;
+          span.center  - 
+          span.right &apos; . $avversario . &apos;
+        .timer
+          span#minuti.minuti 3
+          span :
+          span#secondi.secondi 00
+      #progress-bar.progress-bar
+      #quiz.quiz
+        .quiz-domanda
+          h2#domanda=quiz.question
+        .quiz-risposte
+          .quiz-risposta
+            button#risposta1.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 1, " . $_GET["id"] . ")')=quiz.answers.answer_a
+          .quiz-risposta
+            button#risposta2.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 2, " . $_GET["id"] . ")')=quiz.answers.answer_b
+          if quiz.answers.answer_c != null
+            .quiz-risposta
+              button#risposta3.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 3, " . $_GET["id"] . ")')=quiz.answers.answer_c
+          if quiz.answers.answer_d != null
+            .quiz-risposta
+              button#risposta4.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 4, " . $_GET["id"] . ")')=quiz.answers.answer_d 
+          if quiz.answers.answer_e != null
+            .quiz-risposta
+              button#risposta5.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 1, " . $_GET["id"] . ")')=quiz.answers.answer_e
+          if quiz.answers.answer_f != null
+            .quiz-risposta
+              button#risposta6.risposta(type='button' onclick='verifyQuestion($arrayQuestions[0], 2, " . $_GET["id"] . ")')=quiz.answers.answer_f
+        .quiz-prossima
+          button#prossima1.prossima(type='button' onclick='' disabled='') Prossima domanda
+          button#prossima2.prossima(type='button' onclick='') Prossima domanda
+          button#prossima3.prossima(type='button' onclick='') Prossima domanda
+          button#prossima4.prossima(type='button' onclick='') Prossima domanda
+          button#prossima5.prossima(type='button' onclick='') Vedi i risultati
+
+
+        

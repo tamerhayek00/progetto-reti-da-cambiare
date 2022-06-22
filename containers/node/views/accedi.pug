@@ -1,0 +1,51 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/accesso.css")
+    script(src='/scripts/validaDati/login.js')
+
+    
+block content
+    // ACCEDI
+    .container
+        .descrizione
+            h3.reveal Entra con il tuo account e intraprendi una sfida!
+            a.reveal(href='/registrati/') Ancora non sei registrato?
+        .terminale.zoom
+            .window-bar
+                .window-bar-title
+                    img(src='/images/icons/code.svg' alt='Logo Terminale')
+                    p
+                        | Accedi 
+                        span.pressEnter
+                            | - Premi 
+                            i Invio
+                            |  per confermare
+                .window-bar-buttons
+                    img(src='/images/icons/minimize.svg' alt='Minimize')
+                    img(src='/images/icons/maximize.svg' alt='Maximize')
+                    a(href='../../')
+                        img(src='/images/icons/close.svg' alt='Close')
+            form.form(action='./accedi.php' method='post')
+                .utenteNotFound
+                    p Username o password errati!
+                #divUsername.form-elem
+                    label(for='username')
+                        span.dominio trivia@accesso
+                        | :
+                        span.root /username
+                        | $&gt;
+                    input#username(type='text' name='username' placeholder='Inserisci il tuo username' onkeypress='usernamePressed(event)' autofocus='')
+                    button#usernameButton.btn(type='button' onclick='usernamePressedBtn()') Invio
+                small#smallUsername
+                #divPassword.form-elem
+                    label(for='password')
+                        span.dominio trivia@accesso
+                        | :
+                        span.root /password
+                        | $&gt;
+                    input#password(type='password' name='passwordUtente' placeholder='Inserisci la tua password' onkeypress='passwordPressed(event)')
+                small#smallPassword
+                #divSubmit.form-elem
+                    button#submit.submit(name='accesso' type='submit' disabled='')
+                    | Accedi

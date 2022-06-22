@@ -106,4 +106,74 @@ router.get('/classifica/', function(req, res, next) {
   }
 });
 
+
+/* GET accesso. */
+router.get('/accedi/', function(req, res, next) {
+  if (req.query.accesso) {
+    res.render('accedi',{
+      title: 'Trivia Stack | Accesso',
+      user: {
+        "username": "tamerhayek",
+        "password": "tamer2000"
+      }
+    });
+  } else {
+    res.render('accedi',{
+      title: 'Trivia Stack | Accesso'
+    });
+  }
+});
+
+/* GET registrazione. */
+router.get('/registrati/', function(req, res, next) {
+  if (req.query.accesso) {
+    res.render('registrati',{
+      title: 'Trivia Stack | Registrazione',
+      user: {
+        "username": "tamerhayek",
+        "password": "tamer2000"
+      }
+    });
+  } else {
+    res.render('registrati',{
+      title: 'Trivia Stack | Registrazione'
+    });
+  }
+});
+
+
+/* GET profilo. */
+router.get('/profilo/', function(req, res, next) {
+  if (req.query.accesso) {
+    res.render('profilo',{
+      title: 'Trivia Stack | Profilo Utente',
+      user: {
+        "username": "tamerhayek",
+        "password": "tamer2000"
+      }
+    });
+  } else {
+    res.render('profilo',{
+      title: 'Trivia Stack | Profilo Utente'
+    });
+  }
+});
+
+/* GET sfida. */
+router.get('/sfida/', function(req, res, next) {
+  if (req.query.accesso) {
+    res.render('sfida',{
+      title: 'Trivia Stack | Sfide',
+      user: {
+        "username": "tamerhayek",
+        "password": "tamer2000"
+      }
+    });
+  } else {
+    res.render('sfida',{
+      title: 'Trivia Stack | Sfide'
+    });
+  }
+});
+
 module.exports = router;

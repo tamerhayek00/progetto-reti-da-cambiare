@@ -1,0 +1,45 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/sfide.css")
+    
+    
+block content
+    .container
+        .nuova-sfida.reveal
+            .casuale
+                a.button.zoom(href='./casuale.php') Inizia una nuova sfida casuale!
+                p.error
+                    | La ricerca ha impiegato troppo tempo! 
+                    br
+                    |  Cerca le sfide in attesa e in corso.
+            form.amico(name='cercaAmico' action='./amico.php' method='POST')
+                button#sfidaamico.button.zoom(type='submit') Sfida un tuo amico!
+                .search-input
+                    input.zoom(type='text' name='username' placeholder='Cerca username')
+                    p.error Utente non trovato!
+
+        .sfide.incorso.reveal
+            h3 Sfide in corso
+            p  &Egrave; il tuo turno!
+            a.sfida(href='./quiz/risultati/?id=$id')
+                .sfida-giocatore
+                    span.left $giocatore1
+                    span.center p1 - p2
+                    span.right $giocatore2
+        .sfide.inattesa.reveal
+            h3 Sfide in attesa
+            p  L'avversario deve ancora giocare!
+            a.sfida(href='./quiz/risultati/?id=$id')
+                .sfida-giocatore
+                    span.left $giocatore1
+                    span.center p1 - p2
+                    span.right $giocatore2
+        .sfide.concluse.reveal
+            h3 Sfide concluse
+            a.sfida(href='./quiz/risultati/?id=$id')
+                .sfida-giocatore
+                    span.left $giocatore1
+                    span.center p1 - p2
+                    span.right $giocatore2
+            

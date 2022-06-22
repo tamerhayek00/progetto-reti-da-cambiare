@@ -1,0 +1,239 @@
+.container {
+    width: 100%;
+    padding: 50px 150px;
+}
+
+.nuova-sfida {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #77bc3f;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.casuale {
+    padding: 20px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.casuale p {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+.amico {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.amico .search-input {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.amico .search-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1 px solid white;
+    border-radius: 10px;
+    align-self: center;
+}
+.amico .search-input .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.sfide {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #77bc3f;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+.sfide > h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.sfide > p {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.sfida {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sfida .sfida-giocatore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.sfida .sfida-giocatore span {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+}
+.sfida .sfida-giocatore:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+.sfida .sfida-giocatore .left {
+    width: 40%;
+}
+.sfida .sfida-giocatore .center {
+    width: 20%;
+}
+.sfida .sfida-giocatore .right {
+    width: 40%;
+}
+.sfida .vittoria span {
+    border: 2px solid #6fc42e;
+}
+.sfida .sconfitta span {
+    border: 2px solid #b41717;
+}
+.sfida .vittoria .center {
+    background-color: #6fc42e;
+}
+.sfida .sconfitta .center {
+    background-color: #b41717;
+}
+.sfida .vittoria:hover {
+    background-color: #6fc42e;
+    color: #ffffff;
+}
+.sfida .sconfitta:hover {
+    background-color: #b41717;
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 20px 50px;
+    }
+    
+    .nuova-sfida {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid #77bc3f;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    
+    .casuale {
+        padding: 10px 50px;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+    .amico {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .amico .search-input {
+        margin: 0;
+    }
+    .amico button {
+        width: 30%;
+        margin: 15px;
+    }
+    .amico .search-input input {
+        margin: 15px;
+    }
+    
+    .sfide > h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .sfide > p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .casuale {
+        padding: 0;
+        width: 100%;
+    }
+    .amico {
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    .amico button {
+        margin: 5px;
+        width: 50%;
+    }
+    .amico .search-input input {
+        margin: 5px;
+    }
+    
+    .sfide > h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .sfide > p {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .sfida {
+        width: 100%;
+    }
+    .sfida .sfida-giocatore span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sfida .sfida-giocatore span {
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+

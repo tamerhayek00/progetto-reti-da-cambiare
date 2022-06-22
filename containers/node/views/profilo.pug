@@ -1,0 +1,32 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/profilo.css")
+
+    
+block content
+    .container
+        .descrizione
+            h2 IL TUO PROFILO
+            a.button(href='../admin/') Vai alla sezione admin
+        br
+        hr
+        br
+        #nome.data.first
+            h3 NOME
+            input(value='nome' disabled='')
+        #cognome.data
+            h3 COGNOME
+            input(value='cognome' disabled='')
+        #email.data
+            h3 EMAIL
+            input(value='email' disabled='')
+        #username.data
+            h3 USERNAME
+            input(value='username' disabled='')
+        #partiteGiocate.data
+            h3 SFIDE GIOCATE
+            input(value='numero' disabled='')
+        #partiteVinte.data
+            h3 SFIDE VINTE
+            input(value='numero' disabled='')

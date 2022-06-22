@@ -2,6 +2,78 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/layout.css')
+
+    // Fonts
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap' rel='stylesheet')
+
+    // scrollreveal
+    script(src='https://unpkg.com/scrollreveal')
+
+    // favicon
+    link(rel='shortcut icon' href='/images/logo.png')
+
+    block head
+
   body
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    script.
+      $(document).ready(function() {
+        $("#newbtn").on({
+          mouseenter: function() {
+            $(this).text("Inizia a giocare!");
+          },
+          mouseleave: function() {
+            $(this).text("+");
+          }
+        })
+      });
+
+     // NAVBAR
+    .barra-nav
+      .barra-nav-logo
+        a(href='/')
+          img(src='/images/logo.png' alt='Logo Trivia Stack')
+      .barra-nav-menu
+        a(href='/classifica/') Classifica
+        a(href='/sfida/') Sfide
+        a(href='/contatti/') Contatti
+      .barra-nav-user
+        if user 
+          a.button(href="/profilo/")
+            img(src="/images/icons/profile.svg" alt="Icona Profilo")
+            p= user.username
+          a.login(href='/')
+            img.black-icon(src='/images/icons/logout.svg')
+        else
+          a.login(href='?accesso=true') Accedi
+          a.button(href='/auth/registrazione/') Registrati
+
     block content
+
+    // FOOTER
+    .footer.reveal
+      .footer-copyright
+        p  &copy; Reti di Calcolatori 2021/2022
+      .footer-loghi
+        a(href='')
+          img(alt='Logo Facebook' src='/images/facebook.png')
+        a(href='')
+          img(alt='Logo Instagram' src='/images/instagram.png')
+
+    script.
+      ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });

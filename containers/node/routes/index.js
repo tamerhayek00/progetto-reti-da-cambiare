@@ -3,9 +3,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index',{
-    title: 'TriviaStack'
-  });
+  if (req.query.accesso) {
+    res.render('index',{
+      title: 'Trivia Stack',
+      user: {
+        "username": "tamerhayek",
+        "password": "tamer2000"
+      }
+    });
+  } else {
+    res.render('index',{
+      title: 'Trivia Stack'
+    });
+  }
 });
 
 module.exports = router;

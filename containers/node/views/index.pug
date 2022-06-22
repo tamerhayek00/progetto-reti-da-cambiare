@@ -1,5 +1,50 @@
 extends layout
 
+block head
+  link(rel="stylesheet", href="/stylesheets/index.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  a#newbtn.newbutton.zoom(href='/') +
+
+  // HOMEPAGE
+  #homepage.home
+    .home-bg
+    .home-text.reveal.zoom
+      h1.home-title.reveal Trivia Stack
+      h3.home-subtitle.reveal Computer Science Quiz
+      a#scopri.button.reveal(href='#descrizione') Scopri di pi&ugrave;
+  
+  // INFORMAZIONI
+  #descrizione.descrizione
+    .descrizione-img.reveal
+      img(src='/images/question.jpg')
+    .descrizione-content
+      p.reveal
+        | &quot;Trivia Stack&quot; ha come ispirazione &quot;Trivia Crack&quot;,un gioco divertente strutturato a quiz, in cui gli utenti si sfidano tra di loro su domande di cultura generale.
+        br
+        br
+        |         La particolarit&agrave; di &quot;Trivia Stack&quot;, cos&igrave; come suggerito dal nome, &egrave; che le domande riguardano svariati argomenti di informatica.
+        |         Ci&ograve; permette ai giocatori di mettere alla prova le loro conoscenze in questo campo intraprendendo sfide tra di loro nel tentativo di arrivare sempre pi&ugrave; in alto nella classifica generale del gioco.
+        br
+        br
+        |         Per iniziare a giocare &egrave; necessario registrarti: una volta effettuato il login, puoi dare inizio al divertimento sfidando un tuo amico o un utente casuale.
+      a.button.reveal(href='#chi-siamo') Chi siamo
+  
+  // TEAM
+  #chi-siamo.team
+    h2 IL NOSTRO TEAM
+    .sviluppo
+      .dev.reveal
+        img(src='/images/dev/tamer-hayek.jpg')
+        h3 Tamer Hayek
+        p Matricola: 1897438
+      .dev.reveal
+        img(src='/images/dev/diana-calugaru.jpg')
+        h3 Maria Diana Calugaru
+        p Matricola: 1893272
+    .collaborazioni
+      .sponsor.reveal
+        img(src='/images/dev/sapienza.jpg')
+        h3 Sapienza
+
+
